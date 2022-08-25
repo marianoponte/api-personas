@@ -12,8 +12,8 @@ public class RelationshipController {
     @Autowired
     private RelationshipService relationshipService;
 
-    @GetMapping(path = "relaciones/{id1}/{id2}")
-    public String getRelationship(@PathVariable Long id1, @PathVariable Long id2) throws Exception {
+    @GetMapping("relaciones/{id1}/{id2}")
+    public String getRelationship(@PathVariable Long id1, @PathVariable Long id2) {
         return relationshipService.getRelationship(id1,id2);
     }
 }

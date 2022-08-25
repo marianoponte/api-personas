@@ -40,7 +40,26 @@ public class Person extends BaseEntity {
     @Column(name = "contact_number")
     private String contactNumber;
 
-    @Column(name = "father")
-    private Long father;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "id_father")
+    private Person father;
 
+    public Boolean isBrother(Person persona2) {
+        return (!this.getId().equals(persona2.getId())
+                && this.getFather() != null
+                && persona2.getFather() != null
+                && this.getFather().equals(persona2.getFather()));
+    }
+
+    public Boolean isCousin(Person persona2) {
+        if (this.getFather() != null && this.getFather().isBrother(persona2.getFather())) {
+            return true;
+        } else return false;
+    }
+
+    public Boolean isUncle(Person person2) {
+        if (this.getFather() != null && this.getFather().isBrother(person2)) {
+            return true;
+        } else return false;
+    }
 }

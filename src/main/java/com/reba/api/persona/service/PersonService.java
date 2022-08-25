@@ -117,11 +117,12 @@ public class PersonService {
         }
     }
 
+    //Actualizo el padre a la persona
     public Person updateFatherToPerson(Long idSon, Long idFather) {
         Person personSon = getPersonExistById(idSon);
         Person personFather = getPersonExistById(idFather);
 
-        personSon.setFather(idFather);
+        personSon.setFather(personFather);
 
         personRepository.save(personSon);
 

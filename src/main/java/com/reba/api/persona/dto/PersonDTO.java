@@ -36,5 +36,5 @@ public class PersonDTO {
 
     private String email;
 
-    private Long father;
+    private PersonDTO father;
 }
