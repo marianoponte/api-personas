@@ -121,7 +121,7 @@ public class PersonService {
         Person personSon = getPersonExistById(idSon);
         Person personFather = getPersonExistById(idFather);
 
-        personSon.setFather(idFather);
+        personSon.setFather(personFather);
 
         personRepository.save(personSon);
 

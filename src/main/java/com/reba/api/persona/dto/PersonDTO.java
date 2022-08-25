@@ -1,5 +1,6 @@
 package com.reba.api.persona.dto;
 
+import com.reba.api.persona.model.Person;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -36,5 +37,5 @@ public class PersonDTO {
 
     private String email;
 
-    private Long father;
+    private Person father;
 }

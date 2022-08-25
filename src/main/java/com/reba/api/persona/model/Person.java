@@ -40,7 +40,8 @@ public class Person extends BaseEntity {
     @Column(name = "contact_number")
     private String contactNumber;
 
-    @Column(name = "father")
-    private Long father;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "id_father")
+    private Person father;
 
 }
