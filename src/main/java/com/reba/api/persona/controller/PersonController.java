@@ -20,7 +20,7 @@ public class PersonController {
 
     @GetMapping("/persona/{id}")
     public ResponseEntity<Person> getPerson(@PathVariable Long id) {
-        Person person = personService.getPerson(id);
+        Person person = personService.getPersonExistById(id);
         return new ResponseEntity<>(person,HttpStatus.OK);
     }
 

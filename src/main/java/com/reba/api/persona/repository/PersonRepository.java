@@ -12,4 +12,6 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
     Optional<Person> findById(Long id);
 
     Optional<Person> findByDocumentTypeAndDocumentNumberAndCountry(DocumentType documentType, String documentNumber, Country country);
+
+    Long countByCountry(Country country);
 }

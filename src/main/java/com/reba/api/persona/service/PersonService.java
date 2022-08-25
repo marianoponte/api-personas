@@ -26,19 +26,13 @@ public class PersonService {
     private PersonRepository personRepository;
 
     @Autowired
-    private DocumentTypeRepository documentTypeRepository;
+    private DocumentTypeService documentTypeService;
 
     @Autowired
-    private CountryRepository countryRepository;
+    private CountryService countryService;
 
     @Autowired
     private ModelMapper modelMapper;
-
-    //Obtener persona por id
-    public Person getPerson(Long id) {
-        Optional<Person> person = personRepository.findById(id);
-        return (person.orElse(null));
-    }
 
     //Obtener todas las personas
     public List<Person> getPeople() {
@@ -72,14 +66,14 @@ public class PersonService {
 
     //Metodo para obtener el tipo de documento por id
     public DocumentType getDocumentType(Long documentTypeId) {
-        Optional<DocumentType> documentTypeOpt = documentTypeRepository.findById(documentTypeId);
+        Optional<DocumentType> documentTypeOpt = documentTypeService.findById(documentTypeId);
         DocumentType documentType = documentTypeOpt.orElseThrow(() -> new DocumentTypeNotFoundException(documentTypeId));
         return documentType;
     }
 
     //Metodo para obtener el pais por el nombre
     public Country getCountry(String countryName) {
-        Optional<Country> countryOpt = countryRepository.findByName(countryName);
+        Optional<Country> countryOpt = countryService.findByName(countryName);
         Country country = countryOpt.orElseThrow(() -> new CountryNotFoundException(countryName));
         return country;
     }
@@ -129,8 +123,19 @@ public class PersonService {
         return personSon;
     }
 
+    //Obtiene la persona por id y sino tira exception
     public Person getPersonExistById(Long id) {
         Optional<Person> personSonOpt = personRepository.findById(id);
         return personSonOpt.orElseThrow(() -> new PersonNotFoundException());
+    }
+
+    //Obtiene cantidad de personas dadas de alta
+    public Long getCountPeople() {
+        return personRepository.count();
+    }
+
+    //Obtiene cantidad de personas dadas de alta por pais
+    public Long getCountPeopleByCountry(Country country) {
+        return personRepository.countByCountry(country);
     }
 }
