@@ -31,7 +31,7 @@ public class StatsService {
         Long countPeople = personService.getCountPeople();
         Long countPeopleByCountry = personService.getCountPeopleByCountry(country);
         if (countPeopleByCountry.longValue() == 0) {
-            return "0,00";
+            return "0.00";
         }
         double percentajeDouble = (countPeopleByCountry.doubleValue() / countPeople.doubleValue()) * 100;
         return String.format("%.2f", percentajeDouble);

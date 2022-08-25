@@ -6,7 +6,10 @@ import javax.persistence.*;
 
 //Clase que representa la tabla pais
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "countries")
 public class Country {

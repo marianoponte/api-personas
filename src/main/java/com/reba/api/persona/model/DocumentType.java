@@ -1,12 +1,15 @@
 package com.reba.api.persona.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 //Clase que representa la tabla tipo de documento
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "document_type")
 public class DocumentType {

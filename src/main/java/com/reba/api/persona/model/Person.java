@@ -1,12 +1,16 @@
 package com.reba.api.persona.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 //Clase que representa la tabla de personas
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "people")
 public class Person extends BaseEntity {
