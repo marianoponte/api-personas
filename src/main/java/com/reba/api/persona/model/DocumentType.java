@@ -18,4 +18,8 @@ public class DocumentType {
 
     @Column(name = "name")
     private String name;
+
+    public DocumentType(String name) {
+        this.name = name;
+    }
 }

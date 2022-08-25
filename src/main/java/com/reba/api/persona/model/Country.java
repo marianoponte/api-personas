@@ -1,6 +1,6 @@
 package com.reba.api.persona.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -21,4 +21,9 @@ public class Country {
 
     @Column(name = "name")
     private String name;
+
+    public Country(String code, String name) {
+        this.code = code;
+        this.name = name;
+    }
 }

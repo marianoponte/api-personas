@@ -44,6 +44,18 @@ public class Person extends BaseEntity {
     @JoinColumn(name = "id_father")
     private Person father;
 
+    public Person(DocumentType documentType, String documentNumber, Country country, String name, String lastName, String birthDate, String nacionality, String email, String contactNumber) {
+        this.documentType = documentType;
+        this.documentNumber = documentNumber;
+        this.country = country;
+        this.name = name;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.nacionality = nacionality;
+        this.email = email;
+        this.contactNumber = contactNumber;
+    }
+
     public Boolean isBrother(Person persona2) {
         return (!this.getId().equals(persona2.getId())
                 && this.getFather() != null
