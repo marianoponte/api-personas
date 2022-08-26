@@ -4,6 +4,12 @@
 
 _Ejercicio Técnico que consiste en la creación de un CRUD de personas con ciertas validaciones, también el manejo de relaciones familiares y stats correspondientes._
 
+## Consignas:
+
+![alt text](https://github.com/marianoponte/api-personas/blob/main/ejercicio_consignas_1.png)
+
+![alt text](https://github.com/marianoponte/api-personas/blob/main/ejercicio_consignas_2.png)
+
 ## Comenzando *IMPORTANTE* 🚀
 
 _Se cargan en la base de datos automáticamente:_
@@ -12,7 +18,7 @@ _Se cargan en la base de datos automáticamente:_
 
 ## Diagrama de clases  
 
-![alt text](https://github.com/marianoponte/adviters-virtual-wallet/blob/main/diagrama_solucion.png)
+![alt text](https://github.com/marianoponte/api-personas/blob/main/diagrama_solucion.png)
 
 ### Pre-requisitos 📋
 
