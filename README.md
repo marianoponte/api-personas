@@ -77,9 +77,10 @@ URL: localhost:8080/personas/{idPersona1}/padre/{idPersona2}
 ------------------------------------------------------------------
 
 _Se devuelve la relación posible entre dos personas:_
-- HERMAN@: Si las dos personas tienen el mismo padre.
-- PRIM@: Si los padres de las personas son hermanos.
-- TI@: Si una de las personas es hermano del padre de la otra.
+- 'HERMAN@': Si las dos personas tienen el mismo padre.
+- 'PRIM@': Si los padres de las personas son hermanos.
+- 'TI@': Si una de las personas es hermano del padre de la otra.
+- 'No hay relacion entre las personas ingresadas': Si no se cumplen niguna de las 3 relaciones
 
 Método: GET
 
@@ -87,7 +88,7 @@ URL: localhost:8080/relaciones/idPersona1/idPersona2
 
 ### NIVEL 3: 
 
-_Porcentajes de personas por país:_
+_Porcentajes de personas por país cargado:_
 
 Método: GET
 
