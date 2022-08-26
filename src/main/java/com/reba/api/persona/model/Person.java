@@ -13,7 +13,12 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "people")
-public class Person extends BaseEntity {
+public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_document_type")
@@ -68,7 +73,7 @@ public class Person extends BaseEntity {
     }
 
     public Boolean isCousin(Person persona2) {
-        if (this.getFather() != null && this.getFather().isBrother(persona2.getFather())) {
+        if (this.getFather() != null && persona2.getFather() != null && this.getFather().isBrother(persona2.getFather())) {
             return true;
         } else return false;
     }

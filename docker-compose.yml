@@ -1,8 +1,8 @@
 version: '3.1'
 services:
   app:
-    container_name: app-api-person
-    image: app-api-person
+    container_name: app-api-personas
+    image: app-api-personas
     build: ./
     ports:
       - "8080:8080"
