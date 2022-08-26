@@ -77,9 +77,9 @@ URL: localhost:8080/personas/{idPersona1}/padre/{idPersona2}
 ------------------------------------------------------------------
 
 _Se devuelve la relación posible entre dos personas:_
-- HERMAN@: Si las dos personas tienen el mismo padre
+- HERMAN@: Si las dos personas tienen el mismo padre.
 - PRIM@: Si los padres de las personas son hermanos.
-- TI@: Si una de las personas es hermano del padre de la otra
+- TI@: Si una de las personas es hermano del padre de la otra.
 
 Método: GET
 
