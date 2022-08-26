@@ -70,8 +70,11 @@ _Relación familiares entre personas a través del padre:_
 
 - Se asigna un padre (persona existente) a una persona:
 
-URL: localhost:8080/personas/{idPersona1}/padre/{idPersona2}
 Método: POST
+
+URL: localhost:8080/personas/{idPersona1}/padre/{idPersona2}
+
+
 
 Se devuelve la relación posible entre dos personas:
 - HERMAN@: Si las dos personas tienen el mismo padre
@@ -82,5 +85,6 @@ Se devuelve la relación posible entre dos personas:
 
 _Porcentajes de personas por país:_
 
-URL: localhost:8080/stats
 Método: GET
+
+URL: localhost:8080/stats
