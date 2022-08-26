@@ -92,4 +92,13 @@ public class ExceptionHandle{
         return new ResponseEntity<>(errorBody, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(value = Exception.class)
+    public ResponseEntity<Object> handleException(Exception ex) {
+        ErrorBody errorBody = new ErrorBody(
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                LocalDateTime.now(),
+                ex.getMessage());
+        return new ResponseEntity<>(errorBody, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }

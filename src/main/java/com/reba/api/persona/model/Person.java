@@ -40,8 +40,8 @@ public class Person {
     @Column(name = "birth_date")
     private String birthDate;
 
-    @Column(name = "nacionality")
-    private String nacionality;
+    @Column(name = "nationality")
+    private String nationality;
 
     @Column(name = "email")
     private String email;
@@ -53,14 +53,14 @@ public class Person {
     @JoinColumn(name = "id_father")
     private Person father;
 
-    public Person(DocumentType documentType, String documentNumber, Country country, String name, String lastName, String birthDate, String nacionality, String email, String contactNumber) {
+    public Person(DocumentType documentType, String documentNumber, Country country, String name, String lastName, String birthDate, String nationality, String email, String contactNumber) {
         this.documentType = documentType;
         this.documentNumber = documentNumber;
         this.country = country;
         this.name = name;
         this.lastName = lastName;
         this.birthDate = birthDate;
-        this.nacionality = nacionality;
+        this.nationality = nationality;
         this.email = email;
         this.contactNumber = contactNumber;
     }

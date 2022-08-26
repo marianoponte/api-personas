@@ -5,8 +5,6 @@ import com.reba.api.persona.model.Country;
 import com.reba.api.persona.model.DocumentType;
 import com.reba.api.persona.model.Person;
 import com.reba.api.persona.dto.PersonDTO;
-import com.reba.api.persona.repository.CountryRepository;
-import com.reba.api.persona.repository.DocumentTypeRepository;
 import com.reba.api.persona.repository.PersonRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,6 +111,10 @@ public class PersonService {
 
     //Actualizo el padre a la persona
     public Person updateFatherToPerson(Long idSon, Long idFather) {
+        if (idSon != null && idFather != null && idSon.equals(idFather))
+        {
+            throw new BusinessException("Los id de las personas son el mismo");
+        }
         Person personSon = getPersonExistById(idSon);
         Person personFather = getPersonExistById(idFather);
 
